@@ -28,6 +28,9 @@ sleep(2)
 frame2 = driver.find_element_by_xpath('//*[@id="oa_main"]')
 driver.switch_to.frame(frame2)
 driver.find_element_by_xpath('//*[@id="addPolicyInfoBtn"]/span/span').click()
-
-driver.find_element_by_xpath('//*[@id="addPolicyInfoDialog"]/div[1]/div/div/form/div/fieldset/div/input[3]').send_keys('text5655')
+sleep(2)
+#输入策略名
+driver.find_element_by_xpath('//*[@id="addPolicyInfoDialog"]/div[1]/div/div/form/div/fieldset/div/input[3]').send_keys('textdfhgjhjvdfgb')
 driver.find_element_by_xpath('//*[@id="addPolicyInfoDialog"]/div[2]/a[1]/span/span').click()
+sleep(2)
+driver.find_element_by_xpath('/html/body/div[13]/div[2]/div[4]/a').click()
