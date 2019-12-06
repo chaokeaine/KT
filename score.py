@@ -12,21 +12,37 @@ results = re.findall(pattern, html)
 
 del results[0]
 j = 0
+o = 0
+h = 0
+c = 0
 
 for i in results:
 
     p = re.compile('<td>(.*?)</td>', re.S)
     w = re.findall(p, i)
-    #print(w)
+    print(w)
     if w[2] == '任选':
         #print('学科：%s，成绩：%s' % (w[1], w[4]))
-        pass
+        #pass
+        b = int(w[4]) * float(w[8])
+        print(b)
+        h = h + b
+        c = float(w[8])+c
+        print('h:%s' % h)
     else:
         #print('学科：%s，成绩：%s' % (w[1], w[4]))
         a = int(w[4]) * float(w[8])
         print(a)
         j = j + a
+        o = float(w[8])+o
         print('j:%s' % j)
+s = float(int(j) / float(o))
+g = int(h) * 0.0002
+p = float(s) + float(g)
 
-
-print(j)
+print('总学分:%s' %o)
+print('总成绩:%s' %j)
+print('平均值:%s' %s)
+print('选修总分:%s' %h)
+print('选修平均分:%s' %g)
+print('自评分:%s' %p)
